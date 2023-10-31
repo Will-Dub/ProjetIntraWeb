@@ -1,0 +1,18 @@
+nav {
+    background-color: gray;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
