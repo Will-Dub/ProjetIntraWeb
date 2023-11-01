@@ -18,10 +18,38 @@
                 <h1 id="logo">WinBig</h1>
             </a>
             <ul class="navbar-nav p-0">
-                <li class="nav-item"><a class="nav-link" href="">Setting</a></li>
+                <li class="nav-item text-white"><h2 id="soldeLabel">Votre solde : </h2></li>
             </ul>
         </div>
     </nav>
+
+    <div class="row mt-4 rounded w-100">
+        <div class="col-12 ml-2">
+            <h1 class="m-3 text-white">Slot games</h1>
+        </div>
+        <div class="scrollmenu col ml-1">
+            <div class="card ml-3">
+                <img class="card-img-top" src="images/placeholder.jpg" alt="Miniature de la vidéo">
+                <h2 class="card-title">Titre</h2>
+                <p class="card-text" >description, description, description, description, description, description, description, description, description, description</p>
+            </div>
+            <div class="card ml-3">
+                <img class="card-img-top" src="images/placeholder.jpg" alt="Miniature de la vidéo">
+                <h2 class="card-title">Titre</h2>
+                <p class="card-text" >description, description, description, description, description, description, description, description, description, description</p>
+            </div>
+            <div class="card ml-3">
+                <img class="card-img-top" src="images/placeholder.jpg" alt="Miniature de la vidéo">
+                <h2 class="card-title">Titre</h2>
+                <p class="card-text" >description, description, description, description, description, description, description, description, description, description</p>
+            </div>
+            <div class="card ml-3">
+                <img class="card-img-top" src="images/placeholder.jpg" alt="Miniature de la vidéo">
+                <h2 class="card-title">Titre</h2>
+                <p class="card-text" >description, description, description, description, description, description, description, description, description, description</p>
+            </div>
+        </div>
+    </div>
 
     <div class="row mt-4 rounded w-100">
         <div class="col-12 ml-2">
@@ -61,26 +89,41 @@
                     <form id="signupForm">
                         <div class="form-group">
                             <label for="email" class="text-white">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email" pattern="[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
                         </div>
                         <div class="form-group">
                             <label class="text-white" for="password">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
                         </div>
-                        <div class="form-group">
-                            <label class="text-white" for="cc" >Credit Card Number</label>
-                            <input type="text" class="form-control" id="cc" placeholder="1111 2222 3333 4444" pattern="[\d]{16}" required>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label class="text-white" for="ed">Expiration Date</label>
-                                <input type="text" class="form-control" id="ed" placeholder="mm/yy" pattern="^(0[1-9]|1[0-2])\/\d{2}$" required>
+                        <div class="container">
+                            <div class="form-group">
+                                <label class="text-white" for="cc" >Credit Card Number</label>
+                                <input type="text" class="form-control" id="cc" placeholder="1111 2222 3333 4444" pattern="[\d]{16}" required>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label class="text-white" for="cvv">CVV</label>
-                                <input type="text" class="form-control" id="cvv" placeholder="123" pattern="^[\d]{3,4}$" required>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="text-white" for="ed">Expiration Date</label>
+                                    <input type="text" class="form-control" id="ed" placeholder="mm/yy" pattern="^(0[1-9]|1[0-2])\/\d{2}$" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="text-white" for="cvv">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="123" pattern="^[\d]{3,4}$" required>
+                                </div>
+                                <label class="text-danger erreur" id="cc-invalide">Carte de crédit invalide</label>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group form-row">
+                            <label class="text-white col-md-4" for="payment">Argent à ajouter</label>
+                            <div class="input-group col-md-6">
+                                <input type="number" class="" id="payment" placeholder="0.00" min="1" max="1000000" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">$</span>
+                                </div>
                             </div>
                         </div>
+
                         <div class="modal-footer">
                             <input type="reset" class="btn btn-secondary">
                             <input type="submit" class="btn btn-primary">
