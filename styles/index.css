@@ -1,3 +1,13 @@
+body {
+    background-image: url('/images/background.jpg');
+    background-repeat: repeat;
+    color: black;
+}
+
+#modal-content{
+    background-color: #011101;
+}
+
 .scrollmenu {
     overflow: auto;
     white-space: nowrap;
