@@ -13,8 +13,19 @@ body {
     white-space: nowrap;
 }
 
-.scrollmenu div{
-    display: inline-block;
+.scrollmenu button{
+    cursor: pointer;
+    white-space: normal;
+    transition: background-color 0.3s;
+}
+
+.scrollmenu button:hover{
+    background-color: #e0dfdf;
+}
+
+.scrollmenu button:active{
+    outline: none;
+    background-color: #b3b2b2;
 }
 
 .card {

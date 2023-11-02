@@ -1,17 +1,19 @@
 $(document).ready(function() {
     resetErreur();
+    refreshSolde();
 
-    if($.cookie('solde1') === undefined){
+    if($.cookie('solde') === undefined || $.cookie('email') === undefined){
         $('#signupModal').modal('show');
-        $.cookie('solde', 0);
     }
     else {
-        $('#soldeLabel').text("Votre solde: " + (Math.round($.cookie('solde') * 100) / 100).toFixed(2) + "$");
+        refreshSolde();
     }
 
     $('#signupForm').submit(function(event) {
-        resetErreur();
         event.preventDefault();
+
+        resetErreur();
+
         const email = $("#email").val();
         const password = $("#password").val();
         const cc = $("#cc").val();
@@ -19,30 +21,43 @@ $(document).ready(function() {
         const cvv = $("#cvv").val();
         let solde = $("#payment").val();
 
+        // Verifie la date d'expiration de la carte
         ed = ed.split("/");
         const ed_year = parseInt(ed[1]);
         const ed_month = parseInt(ed[0]);
-        const date = new Date()
+        const date = new Date();
         const current_year = parseInt(date.getFullYear().toString().substr(-2));
         const current_month = date.getMonth() +1;
         if(ed_year <= current_year){
             if(ed_year < current_year){
+                // Invalide
                 console.log("ED year too low");
                 $("#cc-invalide").removeClass("d-none");
                 return;
             }
             if(ed_month < current_month){
+                // Invalide
                 console.log("ED month too low");
                 $("#cc-invalide").removeClass("d-none");
                 return;
             }
         }
-        console.log("Valid form");
+
+        // Met la connexion dans la mémoire
         $.cookie("email", email);
         $.cookie("solde", solde);
+
+        //Refresh le solde
+        refreshSolde();
     });
 
 });
+
+function refreshSolde(){
+    let solde = $.cookie('solde');
+    if ($.cookie('solde') === undefined || solde < 0){solde = 0}
+    $('#soldeLabel').text("Votre solde: " + (Math.round(solde * 100) / 100).toFixed(2) + "$");
+}
 
 function resetErreur(){
     $(".erreur").addClass("d-none");
