@@ -27,7 +27,7 @@ $(document).ready(function() {
         const ed_month = parseInt(ed[0]);
         const date = new Date();
         const current_year = parseInt(date.getFullYear().toString().substr(-2));
-        const current_month = date.getMonth() +1;
+        const current_month = date.getMonth() + 1;
         if(ed_year <= current_year){
             if(ed_year < current_year){
                 // Invalide
@@ -49,6 +49,7 @@ $(document).ready(function() {
 
         //Refresh le solde
         refreshSolde();
+        $('#signupModal').modal("hide");
     });
 
 });
