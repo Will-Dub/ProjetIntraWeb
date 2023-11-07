@@ -2,7 +2,7 @@ $(document).ready(function() {
     resetErreur();
     refreshSolde();
 
-    if($.cookie('solde') === undefined || $.cookie('email') === undefined){
+    if($.cookie('solde') === undefined || parseInt($.cookie('solde')) === 0 || $.cookie('email') === undefined){
         $('#signupModal').modal('show');
     }
     else {
@@ -32,20 +32,20 @@ $(document).ready(function() {
             if(ed_year < current_year){
                 // Invalide
                 console.log("ED year too low");
-                $("#cc-invalide").removeClass("d-none");
+                $("#cc_invalide").removeClass("d-none");
                 return;
             }
             if(ed_month < current_month){
                 // Invalide
                 console.log("ED month too low");
-                $("#cc-invalide").removeClass("d-none");
+                $("#cc_invalide").removeClass("d-none");
                 return;
             }
         }
 
         // Met la connexion dans la mémoire
-        $.cookie("email", email);
-        $.cookie("solde", solde);
+        $.cookie("email", email, { path: '/' });
+        $.cookie("solde", solde, { path: '/' });
 
         //Refresh le solde
         refreshSolde();

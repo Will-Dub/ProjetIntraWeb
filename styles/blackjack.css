@@ -1,6 +1,56 @@
 body{
+    height: 100%;
     background-image: url('/images/blackjack-background.jpg');
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
+}
+
+/*Modal*/
+.close {
+    color: white;
+}
+
+.close:hover {
+    color: #c6c5c5;
+}
+
+.modal-content{
+    background-color: #011101;
+}
+
+/*CSS pour les cartes*/
+#casino_cards img {
+    width: 15%;
+}
+
+#user_cards img{
+    width: 6%;
+}
+
+#user_cards {
+    object-fit: cover;
+    margin-bottom: 7%;
+}
+
+#casino_cards {
+    height: 6%;
+}
+
+/*Le montant misé*/
+ #bet_amount{
+     display: grid;
+     place-items: center;
+ }
+
+/*La table des anciennes parties*/
+#history_table {
+    min-height: 20%;
+    overflow-y: scroll;
+    background-color: #181717;
+    color: white;
+}
+
+#history_table table th, .history_table table td {
+    border-color: #797777;
 }

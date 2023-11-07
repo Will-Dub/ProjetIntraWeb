@@ -4,10 +4,12 @@ body {
     color: black;
 }
 
+/*Le modal pour se connecter*/
 #modal-content{
     background-color: #011101;
 }
 
+/*La liste des jeux*/
 .scrollmenu {
     overflow: auto;
     white-space: nowrap;
